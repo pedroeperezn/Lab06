@@ -6,22 +6,25 @@
  */
 public class StarWarsName
 {
+    public static final int INPUT_ARGS_INDEX = 0;
+    public static final int[] FIRST_TWO_LETTERS = new int[]{0,2};
+    public static final int[] FIRST_THREE_LETTERS = new int[]{0,3};
+    public static final int EXPECTED_ARGUMENTS = 4;
+    public static final int FIRST_NAME_INDEX = 0;
+    public static final int LAST_NAME_INDEX = 1;
+    public static final int MAIDEN_INDEX = 2;
+    public static final int CITY_INDEX = 3;
+
     /**
      * Scans for input arguments to create a star wars name.
      * @param args String in which to look for the words.
      */
     public static void main(final String[] args)
     {
-        final int[] FIRST_TWO_LETTERS;
-        final int[] FIRST_THREE_LETTERS;
-        final int EXPECTED_ARGUMENTS;
 
-        FIRST_TWO_LETTERS = new int[]{0,2};
-        FIRST_THREE_LETTERS = new int[]{0,3};
-        EXPECTED_ARGUMENTS = 4;
 
         final String[] allWords;
-        allWords = args[0].split("\\|");
+        allWords = args[INPUT_ARGS_INDEX].split("\\|");
 
         if(allWords.length != EXPECTED_ARGUMENTS)
         {
@@ -33,10 +36,10 @@ public class StarWarsName
         final String motherMaidenName;
         final String city;
 
-        firstName = allWords[0];
-        lastName = allWords[1];
-        motherMaidenName = allWords[2];
-        city = allWords[3];
+        firstName = allWords[FIRST_NAME_INDEX];
+        lastName = allWords[LAST_NAME_INDEX];
+        motherMaidenName = allWords[MAIDEN_INDEX];
+        city = allWords[CITY_INDEX];
 
         final String starWarsFirstName;
         final String starWarsLastName;
