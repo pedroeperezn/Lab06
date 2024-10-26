@@ -12,6 +12,12 @@ public class StarWarsName
      */
     public static void main(final String[] args)
     {
+        final int[] FIRST_TWO_LETTERS;
+        final int[] FIRST_THREE_LETTERS;
+
+        FIRST_TWO_LETTERS = new int[]{0,2};
+        FIRST_THREE_LETTERS = new int[]{0,3};
+
         final String[] allWords;
         allWords = args[0].split("\\|");
 
@@ -33,6 +39,9 @@ public class StarWarsName
         final String starWarsFirstName;
         final String starWarsLastName;
 
+        starWarsFirstName = firstName.substring(FIRST_THREE_LETTERS[0],FIRST_THREE_LETTERS[1] ) + lastName.substring(FIRST_TWO_LETTERS[0], FIRST_TWO_LETTERS[1]).toLowerCase();
+        starWarsLastName = motherMaidenName.substring(FIRST_TWO_LETTERS[0], FIRST_TWO_LETTERS[1]) + city.substring(FIRST_THREE_LETTERS[0], FIRST_THREE_LETTERS[1]).toLowerCase();
 
+        
     }
 }
