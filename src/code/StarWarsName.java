@@ -6,14 +6,17 @@
  */
 public class StarWarsName
 {
-    public static final int INPUT_ARGS_INDEX = 0;
-    public static final int[] FIRST_TWO_LETTERS = new int[]{0,2};
+    // Declare constants
+    public static final int INPUT_ARGS_INDEX      = 0;
+    public static final int[] FIRST_TWO_LETTERS   = new int[]{0,2};
     public static final int[] FIRST_THREE_LETTERS = new int[]{0,3};
-    public static final int EXPECTED_ARGUMENTS = 4;
-    public static final int FIRST_NAME_INDEX = 0;
-    public static final int LAST_NAME_INDEX = 1;
-    public static final int MAIDEN_INDEX = 2;
-    public static final int CITY_INDEX = 3;
+    public static final int EXPECTED_ARGUMENTS    = 4;
+    public static final int FIRST_NAME_INDEX      = 0;
+    public static final int LAST_NAME_INDEX       = 1;
+    public static final int MAIDEN_INDEX          = 2;
+    public static final int CITY_INDEX            = 3;
+    public static final int FIRST_CHAR            = 0;
+    public static final int REMAIN_BODY_STRING    = 1;
 
     /**
      * Scans for input arguments to create a star wars name.
@@ -21,7 +24,6 @@ public class StarWarsName
      */
     public static void main(final String[] args)
     {
-
 
         final String[] allWords;
         allWords = args[INPUT_ARGS_INDEX].split("\\|");
@@ -59,8 +61,10 @@ public class StarWarsName
      */
     private static String UpperCaseFirstLetter(final String stringToEvaluate)
     {
-        final char firstLetter = Character.toUpperCase(stringToEvaluate.charAt(0));
+        final char firstLetter;
 
-        return firstLetter + stringToEvaluate.substring(1).toLowerCase();
+        firstLetter = Character.toUpperCase(stringToEvaluate.charAt(FIRST_CHAR));
+
+        return firstLetter + stringToEvaluate.substring(REMAIN_BODY_STRING).toLowerCase();
     }
 }
